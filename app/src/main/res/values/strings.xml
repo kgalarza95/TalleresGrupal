@@ -6,4 +6,6 @@
     <string name="btnCancelar">Cancelar</string>
     <string name="hitUsuario">Ingrese Usuario.</string>
     <string name="hitContrasenia">Ingrese Contraseña</string>
+    <string name="lblNombre">Ingrese Nombre</string>
+    <string name="lblCorreo">Ingrese Correo</string>
 </resources>
