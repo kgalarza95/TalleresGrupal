@@ -39,6 +39,7 @@ public class FrmDatosActivity extends AppCompatActivity {
         btnAceptar = findViewById(R.id.btnAceptar2);
         btnCancelar = findViewById(R.id.btnCancelar2);
         recibirDatosIntent();
+        initEventos();
     }
 
     /**
@@ -60,8 +61,11 @@ public class FrmDatosActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //mostrar alerta
-                Toast.makeText(getApplicationContext(), "Datos ingresados correctamentes", Toast.LENGTH_SHORT);
                 //(ubicacion del mensaje, dato a mostrar, tiempo de aparicion)
+                Toast.makeText(getApplicationContext(), "Datos ingresados correctamentes", Toast.LENGTH_SHORT);
+                System.out.println("Log de consola");
+                limpiarComponentes();
+
             }
         });
 
@@ -69,7 +73,20 @@ public class FrmDatosActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Operacion cancelada", Toast.LENGTH_SHORT);
+                limpiarComponentes();
             }
         });
+    }
+
+    private void limpiarComponentes(){
+        txtTitulo.setText("");
+        btnAceptar.setText("");
+        btnCancelar.setText("");
+        txtNombres.setText("");
+        txtApellidos.setText("");
+        txtEdad.setText("");
+        txtCorreo.setText("");
+        txtContrasenia.setText("");
+        txtTelefono.setText("");
     }
 }

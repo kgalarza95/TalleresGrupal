@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(vista.getContext(), FrmDatosActivity.class);//parametros(contexto de vista, clase java de la vista)
             intent.putExtra("keyUsuario", txtUsuario.getText().toString());// pasar parametros por keey:valor
             startActivityForResult(intent, 0);
+            System.out.println("Prueba de Log");
         }else{
             txtResultado.setText("Acceso Denegado");
+            Toast.makeText(getApplicationContext(), "Datos Incorrectos ", Toast.LENGTH_LONG);
         }
 
     }
