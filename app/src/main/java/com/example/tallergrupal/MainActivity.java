@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             txtResultado.setText("Acceso Exitoso");
 
             //usuo de INTENT pasar de un Activity a otro Activity
-            //Intent intent = new Intent(vista.getContext(), FrmDatosActivity.class);//parametros(contexto de vista, clase java de la vista)
-            //intent.putExtra("keyUsuario", txtUsuario.getText().toString());// pasar parametros por keey:valor
-            //startActivityForResult(intent, 0);
+            Intent intent = new Intent(vista.getContext(), FrmDatosActivity.class);//parametros(contexto de vista, clase java de la vista)
+            intent.putExtra("keyUsuario", txtUsuario.getText().toString());// pasar parametros por keey:valor
+            startActivityForResult(intent, 0);
         }else{
             txtResultado.setText("Acceso Denegado");
         }
