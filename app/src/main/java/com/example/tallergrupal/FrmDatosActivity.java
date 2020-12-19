@@ -80,8 +80,6 @@ public class FrmDatosActivity extends AppCompatActivity {
 
     private void limpiarComponentes(){
         txtTitulo.setText("");
-        btnAceptar.setText("");
-        btnCancelar.setText("");
         txtNombres.setText("");
         txtApellidos.setText("");
         txtEdad.setText("");
