@@ -62,7 +62,7 @@ public class FrmDatosActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //mostrar alerta
                 //(ubicacion del mensaje, dato a mostrar, tiempo de aparicion)
-                Toast.makeText(getApplicationContext(), "Datos ingresados correctamentes", Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "Datos ingresados correctamentes", Toast.LENGTH_SHORT).show();
                 System.out.println("Log de consola");
                 limpiarComponentes();
 
@@ -72,7 +72,7 @@ public class FrmDatosActivity extends AppCompatActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Operacion cancelada", Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "Operacion cancelada", Toast.LENGTH_SHORT).show();
                 limpiarComponentes();
             }
         });
