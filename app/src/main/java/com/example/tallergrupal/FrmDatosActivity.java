@@ -1,8 +1,11 @@
 package com.example.tallergrupal;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,12 +15,29 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FrmDatosActivity extends AppCompatActivity {
 
     private TextView txtTitulo;
+    private Button btnAceptar;
+    private Button btnCancelar;
+    private EditText txtNombres;
+    private EditText txtApellidos;
+    private EditText txtEdad;
+    private EditText txtCorreo;
+    private EditText txtContrasenia;
+    private EditText txtTelefono;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frm_datos);
 
+        txtNombres = findViewById(R.id.txtNombres);
         txtTitulo = findViewById(R.id.txtTitulo);
+        txtApellidos = (EditText) findViewById(R.id.txtApellidos);
+        txtEdad = findViewById(R.id.txtEdad);
+        txtCorreo = findViewById(R.id.txtCorreo);
+        txtContrasenia = findViewById(R.id.txtContrasenia);
+        txtTelefono = findViewById(R.id.txtTelefono);
+        btnAceptar = findViewById(R.id.btnAceptar2);
+        btnCancelar = findViewById(R.id.btnCancelar2);
         recibirDatosIntent();
     }
 
@@ -29,5 +49,27 @@ public class FrmDatosActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();//extraer extras enviadas del activity ant.
         String nomUsuario = bundle.getString("keyUsuario");
         txtTitulo.setText("Formulario Datos "+nomUsuario);
+
+    }
+
+    //FORMA 2 de manejo de eventos de boton
+    private void initEventos(){
+
+        //evento de boton aceptar forma 2
+        btnAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //mostrar alerta
+                Toast.makeText(getApplicationContext(), "Datos ingresados correctamentes", Toast.LENGTH_SHORT);
+                //(ubicacion del mensaje, dato a mostrar, tiempo de aparicion)
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Operacion cancelada", Toast.LENGTH_SHORT);
+            }
+        });
     }
 }
