@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtResultado = (TextView) findViewById(R.id.resultado);// referencia al componente para mostrar la vista
-        txtUsuario = (EditText) findViewById(R.id.username);
-        txtcontrasenia = (EditText) findViewById(R.id.password);
+        txtResultado =  findViewById(R.id.resultado);// referencia al componente para mostrar la vista
+        txtUsuario =  findViewById(R.id.username);
+        txtcontrasenia = findViewById(R.id.password);
 
     }
 
