@@ -3,6 +3,7 @@ package com.example.tallergrupal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(txtUsuario.getText().toString().equals("kevin") && txtcontrasenia.getText().toString().equals("kevin")){
             txtResultado.setText("Acceso Exitoso");
+
+            //usuo de INTENT pasar de un Activity a otro Activity
+            Intent intent = new Intent(vista.getContext(), FrmDatosActivity.class);//parametros(contexto de vista, clase java de la vista)
+            intent.putExtra("keyUsuario", txtUsuario.getText().toString());// pasar parametros por keey:valor
+            startActivityForResult(intent, 0);
         }else{
             txtResultado.setText("Acceso Denegado");
         }
